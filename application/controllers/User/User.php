@@ -11,7 +11,7 @@ class User extends CI_Controller {
 	
 	public function index()
 	{
-		echo "Welcome to Check-Point";
+		$this->load->view("user/layout/index");
 	}
 
 }
