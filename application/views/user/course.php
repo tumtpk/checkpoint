@@ -17,29 +17,19 @@
       <br>
 
         <div class="row">
+            <?php foreach($allCourse->result() as $course){ ?>
             <div class="col-md-4">
-                <div class="card" style="min-height: 210px">
+                <div class="card">
                   <div class="card-body">
-                    <h5 class="card-title">Service Oriented Architecture and Web Service Technology</h5>
-                    <p class="card-text">SWE-343 Service Oriented Architecture and Web Service Technology   1 (3-2-7)</p>
+                    <h5 class="card-title"><?=textLenght($course->course_name, 30) ?></h5>
+                    <p class="card-text"><?=textLenght($course->course_decsription, 40) ?></p>
                     <p class="text-center">
                         <a href="#" class="btn btn-primary">Check Point</a>
                     </p>
                   </div>
                 </div>
             </div>
-
-            <div class="col-md-4">
-                <div class="card" style="min-height: 210px">
-                  <div class="card-body">
-                    <h5 class="card-title">Database Application</h5>
-                    <p class="card-text">SWE-387 Database Application 1 (3-2-7)</p>
-                    <p class="text-center">
-                        <a href="#" class="btn btn-primary">Check Point</a>
-                    </p>
-                  </div>
-                </div>
-            </div>
+            <?php } ?>
         </div>
     </div>
     

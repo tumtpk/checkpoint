@@ -13,30 +13,9 @@ class Onload{
         $method = $this->ci->router->method;
 
         if(!isset($this->ci->session->userdata['logged_in'])){
-            if($controller != "auth" && $directory != "api/" && $directory != "apiCaraccessories/"){
+            if($controller != "auth" && $directory != "api/"){
                 redirect("auth/login");
                 exit();
-            }
-		}else{
-            if($directory != "api/" && $directory != "apiCaraccessories/" && $controller != "role" && $controller != "auth"){
-                $role = $this->ci->session->userdata['logged_in']['role'];
-                if($role == 1){
-                    if($directory != "admin/"){
-                        redirect("role");
-                    }
-                }else if($role == 3){
-                    if($directory != "garage/"){
-                        redirect("role");
-                    }
-                }else if($role == 2){
-                    if($directory != "caraccessory/"){
-                        redirect("role");
-                    }
-                }else if($role == 4){
-                    if($directory != "user/"){
-                        redirect("role");
-                    }
-                }
             }
         }
     }

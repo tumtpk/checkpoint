@@ -11,7 +11,10 @@ class User extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->view("user/layout/index");
+		$userId = $this->session->userdata['logged_in']['id'];
+		$this->load->model("UserCourse");
+		$data["allCourse"] = $this->UserCourse->getCourseByUserId($userId);
+		$this->load->view("user/course", $data);
 	}
 
 }
